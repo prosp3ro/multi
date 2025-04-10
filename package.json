@@ -3,7 +3,8 @@
     "type": "module",
     "scripts": {
         "build": "vite build",
-        "dev": "vite"
+        "vite:dev": "vite",
+        "dev": "concurrently -k -p \"[{name}]\" -c \"blue.bold,green.bold,red.bold\" \"php artisan serve --port 8005\" \"php artisan pail\" \"vite\""
     },
     "devDependencies": {
         "autoprefixer": "^10.4.20",
